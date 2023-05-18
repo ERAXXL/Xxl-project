@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="Ru" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="M2.css">
+<head>
+  <title>Регистрация</title>
+</head>
+<body>
+<?php
+if ($_COOKIE['user'] == ''):
+?>
+
+<div id="register-form">
+      <form action="m1.php" method="post">
+        <h2> Зарегистрировать </h2>
+        <div class="form-group">
+          <label for="login"> Логин: </label>
+          <input type="text" id="login" name="login">
+        </div>
+        <div class="form-group">
+          <label for="email"> Электронная почта email: </label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="password"> Пароль: </label>
+          <input type="password" id="password" name="password">
+        </div>
+        
+        <button type="submit" > Зарегистрировать </button>
+      </form>
+    </div>
+
+<div id="auto">
+  <form action="m2.php" method="post">
+    <h2>Выход</h2>
+    <div class="form-group1">
+      <label for="login"> Логин </label>
+      <input type="text" id="login" name="login">
+    </div>
+    <div class="form-group1">
+      <label for="password"> Пароль: </label>
+      <input type="password" id="password" name="password">
+      <button type="submit"> Войти </button>
+    </div>
+
+  </form>
+<?php else: ?>
+  <p>Добро пожаловать <?=$_COOKIE['user']?>. Чтобы выйти нажмите <a href="exit.php" >здесь</a></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
