@@ -1,0 +1,249 @@
+import pygame
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+#neiro set
+input_dim=4
+out_dim=3
+h_dim=8
+
+def relu(t):
+    return np.maximum(t,0)
+
+def softmax(t):
+    out = np.exp(t)
+    return out/np.sum(out)
+
+def sparse_cross_entopy(z,y):
+    return -np.log(z[0,y])
+
+def tp_full(y, num_classes):
+    y_full = np.zeros((1, num_classes))
+    y_full[0,y]=1
+    return y_full
+
+def relu_deriv(t):
+    return (t>=0).astype(float)
+
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+    
+w1=np.array([[-1.64274694,  1.66956374,  0.66389726, -0.23177614,  0.16084092],
+            [ 1.43657025, -0.85606171,  1.04329266, -0.16519634,  2.6501152 ],
+            [ 0.25541657,  0.31474777,  0.14378049,  1.83712559,  1.61826074],
+            [-0.11977078,  2.02697829,  0.68068275,  1.94668213,  2.6190461 ]])
+
+b1=np.array([[ 1.37345502e-05, -2.33728522e-04,  3.14815427e-04,  7.37497756e-05, 3.92344450e-06]])
+
+w2=np.array([[ 0.07934827, -2.24172529, -1.59607196],
+            [ 1.40521882,  1.51183716,  0.74729739],
+            [-3.04173095, -0.67274466, -0.93276755],
+            [-0.3108538, -1.06612568, -0.38503713],
+            [-1.15239325, -1.321787,   -0.57323667]])
+
+b2=np.array([[2.18383011, 0.71341754, 0.4914181 ]])
+ALPHA=0.0002
+num_epochs=300
+
+
+
+clock = pygame.time.Clock() 
+
+
+pygame.init()
+screen = pygame.display.set_mode((900,600))
+pygame.display.set_caption(("game neiro"))
+icon = pygame.image.load('gn/1.png')
+pygame.display.set_icon(icon)
+#backgroud
+bg=pygame.image.load('gn/bl1.jpg')
+
+#4 brush
+square1= pygame.Surface((900,10))
+square2=pygame.Surface((10,900))
+square3= pygame.Surface((900,10))
+square4=pygame.Surface((10,900))
+
+
+bg=pygame.image.load('gn/bl1.jpg')
+#text
+text = pygame.font.Font('gn/Intro.otf',40)
+text_op=text.render('YOU LOSE',True,'blue')
+restart=text.render('restart',False,'red')
+restart_op=restart.get_rect(topleft=(350,300))
+
+players1=[
+pygame.image.load('gn/p3.png'),
+pygame.image.load('gn/p2.png')
+] 
+
+bad=[pygame.image.load('gn/bad.png')]
+
+#shag players
+timer=pygame.USEREVENT+1
+pygame.time.set_timer(timer,1000)
+
+run = True
+bgx=0
+px1=50
+py1=400
+pspeed=5
+jamp1=10
+isjamp1=False
+jn1=0
+n1=0
+bx=random.randrange(50,800)
+by=random.randrange(50,500)
+a=10
+b=10
+n=1000
+play=True
+
+
+
+#y=np.random.randint(0,input_dim-1)
+
+i=0
+while run:  
+    if play:
+        x=np.array([px1,bx,py1,by])
+        z1 = np.dot(x, w1) + b1
+        a1 = sigmoid(z1)
+        z2 = np.dot(a1, w2) + b2
+        z = sigmoid(z2)
+        print(z)
+
+        py1+=15
+        screen.blit(bg, (bgx,0))
+        screen.blit(bg, (bgx+900,0))
+        screen.blit(square1, (1,1))
+        screen.blit(square2, (1,1))
+        screen.blit(square4, (890,1))
+        screen.blit(square3, (1,590))
+        screen.blit(players1[0], (px1,py1-50))
+        screen.blit(bad[0], (bx,by))
+        #kasania
+        bl1=square1.get_rect(topleft=(1,1))
+        bl2=square2.get_rect(topleft=(1,1))
+        bl3=square4.get_rect(topleft=(890,1))
+        bl4=square3.get_rect(topleft=(1,590))
+        players=players1[0].get_rect(topleft=(px1,py1-50))
+        bad1=bad[0].get_rect(topleft=(bx,by))
+
+        #jol
+        if bad1.colliderect(bl1):
+            a=-a
+            square1.fill('blue')
+        if bad1.colliderect(bl4):
+            a=-a
+            
+            num_epochs-=10
+            square3.fill('blue')
+        if bad1.colliderect(bl2):
+            b=-b
+            square2.fill('blue')
+        if bad1.colliderect(bl3):
+            b=-b
+            square4.fill('blue')
+        by+=a
+        bx+=b
+        #if
+        if players.colliderect(bl1):
+            py1=30      
+            n1=1
+        if players.colliderect(bl4):
+            py1=590-56
+            n1=1
+        if players.colliderect(bad1):
+            play=False
+
+
+
+        
+
+        key= pygame.key.get_pressed()
+
+        if not isjamp1:
+            if z[0][2]>z[0][1] and z[0][2]>z[0][0] and n1==1:
+                isjamp1=True
+        else:
+            if jamp1 >= -10:
+                if jamp1 >0:
+                    py1 -= jamp1**2/2
+                    py1-=10
+                jamp1-=1
+            else:
+                isjamp1=False
+                jamp1=10
+                n2=0
+
+        if key[pygame.K_p]:
+            print("w1",w1,"b1",b1)
+            print("w2",w2,"b2",b2)
+
+        if key[pygame.K_o]:
+            plt.plot(loss_srr)
+            plt.show()
+
+        if  z[0][0]>z[0][1] and z[0][0]>z[0][2] :
+            px1+=pspeed
+            i=0
+        elif z[0][1]>z[0][0] and z[0][1]>z[0][2] :
+            px1-=pspeed
+            i=1
+
+        if z[0][0]==z[0][2] and z[0][0]>z[0][1]:
+            px1+=pspeed
+            isjamp1=True
+            i=0
+        elif z[0][1]==z[0][2] and z[0][1]>z[0][0]:
+            px1-=pspeed
+            isjamp1=True
+            i=1
+            
+
+
+        if px1>=850:
+            px1=850
+        
+        if px1<=0:
+            px1=0
+
+        bgx-=1
+        if bgx==-900:
+            bgx=0
+
+        n1=0
+        clock.tick(60)/n
+        n+=1
+    
+    else:
+        play=True
+        px1=50
+        py1=400
+        bx=random.randrange(50,800)
+        by=random.randrange(50,500)
+        
+        
+
+
+
+
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run= False
+            pygame.quit()
+    
+        if event.type == timer:
+            #x=np.array([[px1,bx,py1,by]])
+            #y=np.random.randint(0,1)
+            square1.fill('black')
+            square2.fill('black')
+            square3.fill('black')
+            square4.fill('black')
+
+    pygame.display.update()
+    
