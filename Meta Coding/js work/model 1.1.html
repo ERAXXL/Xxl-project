@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <h3 id="add">Hello</h3>
+    <p class="par">hi</p>
+    <img id="imgg" style="width: 300px; height: 200px;" src="4.jpeg" alt="error">   
+    <ul class="ull">
+        <li class="lii">frist</li>
+        <li class="lii">second</li>
+        <li class="lii">threth</li>
+    </ul>
+    <script>
+        let hh3 = document.getElementById('add');
+        console.log(hh3.innerText);
+        hh3.innerText = 'Hello world it me';
+
+        let par = document.querySelector('.par');
+        console.log(par);
+
+        let imgg = document.getElementById('imgg');
+        console.log(imgg);
+
+        let list = document.getElementsByTagName('li');
+        console.log(list);
+    </script>
+</body>
+</html>

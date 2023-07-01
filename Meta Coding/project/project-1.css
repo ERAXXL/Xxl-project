@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(51, 49, 49);
+}
+
+.frist {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    border-radius: 5px;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+}
+
+.second {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+    justify-items: center;
+}
+#menu {
+    width: 100%;
+    height: 20px;
+    padding-top: 20px;
+    background-color: rgb(51, 49, 49);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+span {
+    padding: 10px;
+}
+
+#h11 {
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 20px;
+    text-align: left;
+    padding: 10px;  
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+h1{
+    font-size: 16px;
+}
+h1, h3, p, span {
+    font-family: 'Roboto';
+}
+h3{
+    font-size: 14px;
+}
+p{
+    font-size: 10px;
+    color: rgb(158, 152, 145);
+}
+
+.img{
+    width: 540px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: white;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+.img2{
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+#all {
+    background-color: rgb(224, 224, 224);
+    width: 1250px;
+    border-radius: 10px;
+    margin: 40px;
+}
+
+
+
+/*Kaspi*/
+
+
+#kaspi {
+    background-color: rgb(201, 201, 201);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.batton{
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+.batton:hover{
+    background-color: black;
+    color: white;
+}
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+.twoimg{
+    width: 600px;
+    height: 300px;
+    margin-top: 20px;
+}
+h1{
+    padding-left: 20px;
+}
+
+#kaspiInfo, h6, #kaspiInfo>p {
+    margin: 0px;
+    text-align: center;
+    color: black;
+}
+#textp, #texth3{
+    text-align: center;
+    color: black;
+}
+#texth3{
+    font-size: 16px;
+
+}

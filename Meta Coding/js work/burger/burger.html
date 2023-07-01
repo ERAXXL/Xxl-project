@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="burger.css">
+</head>
+<body>
+    <div onclick="menu()"  class="menu-tel">
+        <span class="spann"></span>
+        <span class="spann"></span>
+        <span class="spann"></span>
+    </div>
+    <div id="logo">
+        <img id="logo-img" src="" alt="logo">
+        <ul class="info-menu">
+            <li><a href="">Главная</a></li>
+            <li><a href="">О нас</a></li>
+            <li><a href="">Контакт</a></li>
+            <li><a href="">Наши работы</a></li>
+        </ul>
+    </div>
+
+<script>
+    function menu() {
+    document.getElementById('logo').classList.toggle('open');
+
+    }
+</script>
+</body>
+</html>

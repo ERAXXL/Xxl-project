@@ -1,0 +1,38 @@
+body{
+    padding: 50px;
+    background-color: rgb(207, 206, 206);
+}
+img {
+    width: 200px;
+    height: 200px;
+    transition: opacity 0.3s ease-in-out;
+    padding: 50px;
+
+}
+
+.content p {
+    display: none;
+    position: absolute;
+    padding: 0 100px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    background-color: aqua;
+    color: black;
+}
+
+.content:hover p {
+    display: flex;
+    opacity: 1;
+}
+
+.content {
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+
+}
+.all {
+    display: flex;
+
+}

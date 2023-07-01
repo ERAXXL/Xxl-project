@@ -1,0 +1,365 @@
+
+
+#first {
+    background: linear-gradient(114.23deg, #FEC501 0%, #80C242 67.71%);
+    padding: 1px;
+    position: relative;
+    height: 676px;
+    width: 100%;
+    display: flex;
+}
+.icon {
+    width: 90px;
+    height: 50px;
+}
+.menu{
+    top: 27px;
+    position: absolute;
+    right: 0;
+}
+.menu a {
+    color: #FFFFFF;
+    padding: 14.5px;
+    border-right: 1px solid #EAB602;
+    
+}
+@font-face {
+    font-family: 'Heading-Pro';
+    src: url('font/Heading-Pro-Bold-trial.ttf') format('truetype');
+}
+
+  
+
+h1 {
+    color: #FFFF;
+    font-family: 'Heading-Pro';
+    text-transform: uppercase;
+    font-size: 72px;
+    line-height: 1;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+}
+h1 span {
+    color: #443E3E;
+    
+}
+#h1top{
+    top: 60px;
+    left: 50px;
+}
+
+.children{
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+.back {
+    position: absolute;
+    left: 0px;
+    top: 0;
+
+}
+
+#second {
+    background: linear-gradient(114.23deg, #FEC501 0%, #80C242 67.71%);
+    position: relative;
+    padding: 1px;
+    height: 676px;
+    width: 100%;
+}
+.girl {
+    position: relative;
+    left: 400px;
+    top: 25px;
+
+}
+#h1second{
+    text-align: center;
+}
+
+.par {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 25px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 2px solid #76C22E;
+    border-radius: 22px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: right;
+}
+
+
+
+.par1{
+    width: 230px;
+    height: 60px;
+    left: 205px;
+    top: 163px;
+}
+.par2{
+    width: 230px;
+    height: 60px;
+    left: 712px;
+    top: 163px;
+}
+
+.par3{
+    width: 267px;
+    height: 60px;
+    left: 113px;
+    top: 335px;
+}
+.par4{
+    width: 267px;
+    height: 80px;
+    left: 774px;
+    top: 325px;
+}
+.par5{
+    width: 230px;
+    height: 80px;
+    left: 205px;
+    top: 507px;
+}
+.par6 {
+    width: 284px;
+    height: 80px;
+    left: 712px;
+    top: 507px;
+}
+
+
+#three{
+    background: #80C242;
+    padding: 1px;
+    width: 100%;
+    height: 820px;
+    position: relative;
+    background-image: url("Img/finish.png");
+    background-repeat: no-repeat;
+}
+#threeh1 {
+    position: relative;
+    left: 60px;
+    top: 0px;
+    color: #FFFFFF;
+}
+#threeh1>p{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+}
+
+#person{
+    position: absolute;
+    left: 800px;
+    top: 0px;   
+}
+
+form {
+    padding-left: 60px;
+    z-index: 10;
+    font-family: 'Gilroy';
+    color: #CACACA;
+}
+#youtube {
+    position: absolute;
+    width: 166px;
+    height: 24px;
+    left: 50px;
+    top: 600px;
+}
+#Too {
+    color: white;
+    line-height: 120%;
+    position: absolute;
+    width: 499px;   
+    height: 110px;
+    left: 60px;
+    top: 650px;
+}
+
+#info {
+    color: white;
+    line-height: 120%;
+    
+    position: absolute;
+    width: 471px;
+    height: 154px;
+    left: 850px;
+    top: 600px;
+}
+p {
+    font-family: 'Gilroy';
+    font-size: 18px;
+}
+
+#futerimg {
+    position: relative;
+    width: 101px;
+    height: 119px;
+    left: 550px;
+    top: 80px;
+}
+
+#end{
+    position: absolute;
+    left: 0px;
+    top: 493px;
+}
+input{
+     
+    border-radius: 22px; 
+    width: 461px;
+    height: 69px;
+    color: #FFFF;
+    border-color: #76C22E;
+} 
+#button {
+    background: #FEC501;
+}
+
+#mobmenu{
+    display: none;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-color: #443E3E;
+    width: 200px;
+    height: 100px;
+    z-index: 1;
+}
+#mobmenu>span {
+    margin: 5px;
+    width: 50px;
+    height: 5px;
+    background-color: black;
+}
+@media (max-width: 375px) {
+    
+    #first, #second, #three {
+        width: 100%;
+        height: 100%;  
+        position: relative;  
+        flex-direction: column;   
+    }
+    
+    img {
+        width: 100px;
+        position: relative;
+        
+    }
+    
+    h1, h2 {
+        font-size: 32px;
+        position: relative;
+        top: 0px;
+        padding: 0px 20px 20px 0px;
+
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    .menu {
+        display: none;
+    }
+    .par {
+        width: 80%;
+        height: 50px;
+        position: relative;
+        left: 0px;
+        padding: 25px;
+        
+        top: auto;
+        margin: 5px;
+    }
+    input {
+        width: 270px;
+        height: 50px;
+        margin-left: -10px;
+    }
+    .icon {
+        width: 50px;
+        height: 30px;
+    }
+    .back {
+        position: absolute;
+        left: 100px;
+    }
+    #info {
+        position: relative;
+        top: 5px;
+        margin:5px;
+        
+        text-align: left;
+        left: 5px;
+        width: 95%;  
+    }
+    #Too {
+        position: relative;
+        margin: 5px;
+        padding-top: 70px;
+        text-align: left;
+        top: 0px;
+        left: 5px;
+        
+    }
+    #h1top {
+        top: 0px;
+        text-align: left;
+        left: 0px;
+        
+    }
+    .girl {
+        position: relative;
+        left: 120px;
+        top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .children {
+        position: relative;
+        width: 80%;
+        height: auto;
+        margin: 10px 40px 0px 40px;
+    }
+    #person{
+        position: relative;
+        left: 30px;
+        width: 250px;
+        margin: 20px;
+    }
+    #threeh1{
+        left: 10px;
+        text-align: center;
+    }
+    #threeh1>p {
+        font-size: 16px;
+    }
+    #youtube{
+        position: relative;
+        top: 0px;
+        margin: 5px;
+        left: 85px;
+        
+    }
+    #mobmenu{
+        display: block;
+        z-index: 1;
+    }
+}

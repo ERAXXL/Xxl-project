@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(113, 24, 148);
+}
+
+.h22 {
+    height: 40px;
+    width: 800px;
+    background-color: rgb(168, 78, 78);
+}
+
+.aa {
+    border-radius: 5px;
+    background-color: rgb(99, 102, 104);
+    text-decoration: none;
+}
+
+.aa:hover {
+    background-color: aquamarine;
+}
+
+#pp {
+    font-size: 20px;
+    font-style: italic;
+}
+
+h2 {
+    color: aqua;
+}
